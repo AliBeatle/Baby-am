@@ -1,0 +1,47 @@
+/* MenuTable.css */
+
+
+.menu-table {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 20px;
+    width: 80%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: 346
+    52;;
+    border: 2px solid #c5cd6b; 
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+td {
+    padding: 8px;
+    background: #f6fac9;
+    border: 2px solid #c5cd6b;
+    color: rgb(0, 0, 0);
+    border-top: 1px solid transparent;
+    text-align: center;
+    
+}
+
+tr:hover td {
+    background: #e9efb1;
+    color: rgb(0, 0, 0);
+}
+
+    
+/* Otros estilos según sea necesario */

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Kalam', sans-serif;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../imagenes/pexels-vanessa-loring-5966434.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.select_button_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Kalam', sans-serif;
+  margin-bottom: -10px;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+select {
+  width: 40%;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.button-generar-menu {
+  padding: 12px;
+  border: none;
+  width: 10rem;
+  border-radius: 5px;
+  background-color: #7169ac;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.button-generar-menu:hover {
+  background-color: #5c5495;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: auto;
+}
