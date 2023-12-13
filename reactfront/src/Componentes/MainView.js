@@ -19,26 +19,26 @@ const MainView = () => {
   const [showHideButton, setShowHideButton] = useState(false);
 
   useEffect(() => {
-    getIngredientes();
+    getIngredients();
   }, []);
 
   useEffect(() => {
     // Obtiene el correo del usuario del almacenamiento local
-    const emailUsuario = obtenerCorreoUsuario();
+    const userEmail = obtenerCorreoUsuario();
 
     // Obtiene las recetas guardadas en el almacenamiento local para mostrarlas en la tabla si existen
-    let recetasMenu = JSON.parse(localStorage.getItem(`menu-${emailUsuario}`));
-    if (recetasMenu) {
+    let menuRecipes = JSON.parse(localStorage.getItem(`receta-${userEmail}`));
+    if (menuRecipes) {
       // Establece las recetas del menú en el estado y muestra la tabla
-      setMenu(recetasMenu);
+      setMenu(menuRecipes);
     }
   }, []);
 
   // Obtiene la lista de ingredientes desde la API y ordena los ingredientes
-  const getIngredientes = async () => {
+  const getIngredients = async () => {
     const res = await axios.get(URI);
-    const ingredientesOrdenados = res.data.sort((a, b) => a.nombre.localeCompare(b.nombre));
-    setIngredientsListMainView(ingredientesOrdenados);
+    const orderedIngredients = res.data.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    setIngredientsListMainView(orderedIngredients);
   };
 
   // Maneja el cambio de los ingredientes seleccionados
@@ -55,7 +55,7 @@ const MainView = () => {
   };
 
   // Organiza las recetas seleccionadas en un menú para cada día de la semana
-  const organizarRecetas = (menu) => {
+  const orderRecipes = (menu) => {
     const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     const categorias = [1, 2, 3, 4]
     const recetasSelecionadas = {}
@@ -101,7 +101,6 @@ const MainView = () => {
           authorization: `Bearer ${token}`
         }
       });
-
       // Filtrar las recetas por su category_id
       const recipes = response.data.result;
 
@@ -127,12 +126,10 @@ const MainView = () => {
         }
       }
 
-      console.log('Recetas seleccionadas:', selectedRecipes);
+      const orderedMenu = orderRecipes(selectedRecipes);
 
-      const orderedMenu = organizarRecetas(selectedRecipes);
-
-      const emailUsuario = obtenerCorreoUsuario();
-      localStorage.setItem(`menu-${emailUsuario}`, JSON.stringify(orderedMenu));
+      const userEmail = obtenerCorreoUsuario();
+      localStorage.setItem(`receta-${userEmail}`, JSON.stringify(orderedMenu));
 
       // Actualizar el estado para mostrar la tabla del menú
       setMenu(orderedMenu);

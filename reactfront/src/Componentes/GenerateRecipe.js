@@ -23,12 +23,12 @@ const GenerateRecipe = () => {
 
     // Obtener la lista de ingredientes y categorías de recetas al montar el componente
     useEffect(() => {
-        getIngredientes();
+        getIngredients();
         getRecipesCategories();
     }, []);
 
     // Función para obtener la lista de ingredientes
-    const getIngredientes = async () => {
+    const getIngredients = async () => {
         const res = await axios.get(URI);
         const ingredientesOrdenados = res.data.sort((a, b) => a.nombre.localeCompare(b.nombre));
         setIngredientsList(ingredientesOrdenados);
