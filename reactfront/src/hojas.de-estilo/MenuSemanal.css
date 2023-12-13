@@ -7,8 +7,8 @@
 .menu_semanal_days {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    /* Espacio entre los días */
 }
 
 .menu_semanal_week_day {
@@ -26,7 +26,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -48,11 +47,11 @@ h4 {
 
 h5 {
     font-size: 16px;
-    margin-bottom: -15px;
+    margin-bottom: -16px;
 }
 
 a {
     text-decoration: none;
-    color: #7169ac;
+    color: #8b7171;
     font-size: 14px;
 }

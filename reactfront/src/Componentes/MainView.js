@@ -16,6 +16,7 @@ const MainView = () => {
   const [ingredientsListMainView, setIngredientsListMainView] = useState([]);
   const [excludedIngredientsMainView, setExcludedIngredientsMainView] = useState([]);
   const [menu, setMenu] = useState([]);
+  const [showHideButton, setShowHideButton] = useState(false);
 
   useEffect(() => {
     getIngredientes();
@@ -26,11 +27,10 @@ const MainView = () => {
     const emailUsuario = obtenerCorreoUsuario();
 
     // Obtiene las recetas guardadas en el almacenamiento local para mostrarlas en la tabla si existen
-    let recetasMenu = JSON.parse(localStorage.getItem(`receta-${emailUsuario}`));
+    let recetasMenu = JSON.parse(localStorage.getItem(`menu-${emailUsuario}`));
     if (recetasMenu) {
       // Establece las recetas del menú en el estado y muestra la tabla
       setMenu(recetasMenu);
-      setShowTable(true);
     }
   }, []);
 
@@ -46,6 +46,7 @@ const MainView = () => {
     const excludedIngredientsIds = selectedOptions.map(option => option.value);
     setExcludedIngredientsMainView(excludedIngredientsIds);
   };
+  
 
   // Obtiene recetas aleatorias de una lista dada
   const getRandomRecipes = (recipes, count) => {
@@ -131,11 +132,12 @@ const MainView = () => {
       const orderedMenu = organizarRecetas(selectedRecipes);
 
       const emailUsuario = obtenerCorreoUsuario();
-      localStorage.setItem(`receta-${emailUsuario}`, JSON.stringify(orderedMenu));
+      localStorage.setItem(`menu-${emailUsuario}`, JSON.stringify(orderedMenu));
 
       // Actualizar el estado para mostrar la tabla del menú
       setMenu(orderedMenu);
       setShowTable(true);
+      setShowHideButton(true);
     } catch (error) {
       console.error('Error al generar el menú:', error);
       // Manejar errores, mostrar mensajes al usuario, etc.
@@ -146,8 +148,6 @@ const MainView = () => {
   if (!token) {
     return <Navigate to="/" />
   }
-
-
 
   return (
     <div className="main-container">
@@ -175,7 +175,18 @@ const MainView = () => {
             <button className="button-generar-menu" onClick={handleGenerateMenu}>
               Generar Menú
             </button>
-            {(showTable || menu.length > 0) && <MenuSemanal menu={menu} />}
+            {menu.length > 0 && (
+              <button
+                className={`toggle-menu-button`}
+                onClick={() => {
+                  setShowTable(!showTable);
+                }}
+              >
+                {showTable ? 'Ocultar Menú' : 'Visualizar Menú'}
+              </button>
+            )}
+
+            {(showTable || menu.length > 0) && <MenuSemanal menu={menu} showTable={showTable} />}
           </div>
         </div>
       </div>

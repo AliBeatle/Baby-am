@@ -38,7 +38,6 @@ const GenerateRecipe = () => {
     const getRecipesCategories = async () => {
         const res = await axios.get(URI2);
         setRecipesCategoriesList(res.data);
-        console.log(res.data);
     };
 
     // Función para manejar el cambio de categoría seleccionada
@@ -68,8 +67,6 @@ const GenerateRecipe = () => {
             name: randomRecipe.nombre,
             link: randomRecipe.link,
         };
-
-        console.log('Generated Recipe:', generatedRecipeRef);
 
         setIsModalOpen(true); // Abre el modal después de obtener la receta
     };

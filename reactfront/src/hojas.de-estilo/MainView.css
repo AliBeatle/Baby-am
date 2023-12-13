@@ -61,7 +61,7 @@ select {
   border: none;
   width: 10rem;
   border-radius: 5px;
-  background-color: #7169ac;
+  background-color: #7e78a5;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -69,7 +69,24 @@ select {
 }
 
 .button-generar-menu:hover {
-  background-color: #5c5495;
+  background-color: #635e88;
+}
+
+.toggle-menu-button {
+  padding: 12px;
+  border: none;
+  width: 8.5rem;
+  border-radius: 5px;
+  background-color: #7e78a5;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.toggle-menu-button:hover {
+  background-color: #635e88;
 }
 
 .overlay {
