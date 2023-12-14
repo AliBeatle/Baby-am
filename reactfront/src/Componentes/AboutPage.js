@@ -11,8 +11,6 @@ const AboutPage = () => {
                 </header>
                 <div className="about-content">
                     <h1>¿ Qué es BabyÑam</h1>
-
-                    <div className='first_text'>
                         <h3>Información sobre la aplicación</h3>
                         <p><strong>BabyÑam</strong> es una aplicación pensada para ayudar a padres y madres a simplificar la compleja tarea de planificar las comidas de los bebés a partir de la introducción de la alimentación complementaria.<br />
                             Como has podido comprobar, se trata de una aplicación web de uso intuitivo y eficaz que genera menús semanales equilibrados y saludables y que se adaptan a las necesidades nutricionales de los bebés.
@@ -21,8 +19,6 @@ const AboutPage = () => {
                             Además de los menús, la aplicación te ofrecerá enlaces directos a las recetas para preparar las elaboraciones.<br />
                             Por sus características, BabyÑam no solo beneficia a padres y madres, sino que también puede ser útil en otros ámbitos, como escuelas infantiles o para profesionales en el ámbito de la salud relacionados con bebés.
                         </p>
-                    </div>
-                    <div className='second_text'>
                         <h3>Breve manual de usuario</h3>
                         <p>
                             BabyÑam cuenta con una interfaz de inicio de sesión que muestra dos pestañas distintas: una para el registro de nuevos usuarios y otra para iniciar sesión con correo electrónico y contraseña.
@@ -31,8 +27,6 @@ const AboutPage = () => {
                             Para acceder a la aplicación, siempre tendrás que iniciar sesión con tu correo electrónico y contraseña.
                             Una vez en la vista principal, podrás seleccionar la opción que creas conveniente en el menú que hemos descrito anteriormente.
                         </p>
-                    </div>
-
                 </div>
             </div>
         </div>
