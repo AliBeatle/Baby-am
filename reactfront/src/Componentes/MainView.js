@@ -154,7 +154,7 @@ const MainView = () => {
         </header>
         <div className="content">
           <h1>¡Bienvenido a BabyÑAM!</h1>
-          <h3>¿Preparado para generar un MENÚ SEMAMAL para tu bebé? ¡VAMOS A ELLO!</h3>
+          <h3>¿Preparado para generar un MENÚ SEMANAL para tu bebé? ¡VAMOS A ELLO!</h3>
           <p>Selecciona a continuación aquellos alimentos que NO quieres que se incluyan en el menú:</p>
           <div className='select_button_container'>
             <Select
