@@ -1,12 +1,13 @@
 .recipes-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     background-image: url('../imagenes/pexels-vanessa-loring-5966434.jpg');
     background-size: cover;
     background-position: center;
-    margin-top: 40px;
 }
 
 .recipe-card {
